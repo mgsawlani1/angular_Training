@@ -1,0 +1,15 @@
+<p>inventory works!</p>
+<table border = "1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    <tr *ngFor = "let product of productList; let i = index">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+
+        <td *ngIf = "isAdmin"><button (click) = "deleteItem(i)">DELETE</button></td>
+
+
+    </tr>
+</table>

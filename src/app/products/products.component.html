@@ -1,0 +1,20 @@
+<p>products works!</p>
+
+Search Products <input type ="text" #searchKey (keyup)="validate(searchKey.value)"/>{{searchKey.value}}
+<table border = "1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    <tr *ngFor = "let product of productList; let i = index">
+        <td>{{product.id}}</td>
+        <td>{{product.name | uppercase}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product | json}}</td>
+
+        <td *ngIf = "isAdmin"><button (click) = "deleteItem(i)">DELETE</button></td>
+<td><app-product-updater [price] = "product.price" (update) = "setNewprice($event,i)"></app-product-updater></td>
+
+    </tr>
+</table>
