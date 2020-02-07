@@ -9,6 +9,7 @@ export class UserService {
     }
     getUsers():Observable<any>{
         return this.http.get('http://jsonplaceholder.typicode.com/users');
+        console.log("hi")
     }
     postUsers(userObj:any){
        return this.http.post('http://jsonplaceholder.typicode.com/users',{user:userObj} )
